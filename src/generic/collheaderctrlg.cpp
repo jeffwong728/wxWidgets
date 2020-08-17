@@ -175,7 +175,7 @@ void wxGenericCollapsibleHeaderCtrl::OnPaint(wxPaintEvent& WXUNUSED(event))
 
     wxRect rect(wxPoint(0, 0), GetClientSize());
 
-    wxSize btnSize = wxRendererNative::Get().GetCollapseButtonSize(this, dc);
+    wxSize btnSize = wxRendererNative::GetGeneric().GetCollapseButtonSize(this, dc);
 
     wxRect btnRect(wxPoint(0, 0), btnSize);
     btnRect = btnRect.CenterIn(rect, wxVERTICAL);
@@ -191,7 +191,7 @@ void wxGenericCollapsibleHeaderCtrl::OnPaint(wxPaintEvent& WXUNUSED(event))
     if ( !m_collapsed )
         flags |= wxCONTROL_EXPANDED;
 
-    wxRendererNative::Get().DrawCollapseButton(this, dc, btnRect, flags);
+    wxRendererNative::GetGeneric().DrawCollapseButton(this, dc, btnRect, flags);
 
     wxString text;
     int indexAccel = wxControl::FindAccelIndex(GetLabel(), &text);
@@ -205,7 +205,7 @@ void wxGenericCollapsibleHeaderCtrl::OnPaint(wxPaintEvent& WXUNUSED(event))
 
 #ifdef __WXMSW__
     if ( HasFocus() )
-        wxRendererNative::Get().DrawFocusRect(this, dc, textRect.Inflate(1), flags);
+        wxRendererNative::GetGeneric().DrawFocusRect(this, dc, textRect.Inflate(1), flags);
 #endif
 }
 
