@@ -2563,9 +2563,10 @@ void wxDataViewMainWindow::OnPaint( wxPaintEvent &WXUNUSED(event) )
         for (unsigned int item = item_start; item < item_last; item++)
         {
             const int h = GetLineHeight(item);
-            if ( item % 2 )
+            if ( item == m_owner->GetHighlightLine() )
             {
                 dc.DrawRectangle(xRect, cur_line_start, widthRect, h);
+                break;
             }
             cur_line_start += h;
         }
