@@ -1,0 +1,40 @@
+{
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "cmake.configureSettings": {
+      "CMAKE_TOOLCHAIN_FILE": "${env:VCPKG_ROOT_DIR}/scripts/buildsystems/vcpkg.cmake",
+      "CMAKE_VERBOSE_MAKEFILE" : false,
+      "CMAKE_EXPORT_COMPILE_COMMANDS" : true,
+      "CMAKE_SKIP_RPATH" : false,
+      "CMAKE_SKIP_INSTALL_RPATH" : false,
+      "CMAKE_DEBUG_POSTFIX": "_debug",
+      "CMAKE_MINSIZEREL_POSTFIX" : "_minsize",
+      "CMAKE_RELWITHDEBINFO_POSTFIX" : "_debinfo",
+      "CMAKE_POSITION_INDEPENDENT_CODE" : true,
+      "wxBUILD_TOOLKIT" : "gtk3",
+      "wxBUILD_MONOLITHIC" : true,
+      "wxUSE_REGEX" : "builtin",
+      "wxUSE_ZLIB" : "sys",
+      "wxUSE_EXPAT" : "sys",
+      "wxUSE_LIBJPEG" : "sys",
+      "wxUSE_LIBPNG" : "sys",
+      "wxUSE_LIBTIFF" : "sys",
+      "wxUSE_LIBLZMA" : "sys",
+      "wxUSE_STL" : true,
+      "wxUSE_STD_CONTAINERS" : true,
+      "wxBUILD_DISABLE_PLATFORM_LIB_DIR" : true,
+      "wxBUILD_SHARED" : true,
+      "wxBUILD_PRECOMP" : false,
+      "wxBUILD_SAMPLES" : "SOME",
+      "HAVE_STD_UNORDERED_MAP" : true,
+      "HAVE_STD_UNORDERED_SET" : true,
+      "wxUSE_MEMORY_TRACING" : true
+    },
+    "cmake.preferredGenerators": ["Ninja"],
+    "cmake.platform": "x64",
+    "cmake.buildDirectory" : "${env:SPAM_ROOT_DIR}/build/wxWidgets/${buildType}",
+    "cmake.installPrefix" : "${env:SPAM_ROOT_DIR}/install/wxWidgets",
+    "cmake.configureOnOpen": false,
+    "cmake.configureEnvironment": {
+      "VCPKG_DIR" : "${env:VCPKG_ROOT_DIR}/installed/x64-windows"
+    }
+}

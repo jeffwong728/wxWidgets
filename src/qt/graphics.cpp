@@ -398,7 +398,7 @@ public:
         : wxGraphicsObjectRefData(renderer),
           m_color(col.GetQColor())
     {
-        m_font.setFamily(QString(facename));
+        m_font.setFamily(QString::fromUtf8(facename.ToUTF8().data()));
         m_font.setPixelSize(static_cast<int>(sizeInPixels));
         if ( flags & wxFONTFLAG_LIGHT )
             m_font.setWeight(QFont::Light);
@@ -970,7 +970,7 @@ public:
         m_qtPainter->setFont(fontData->GetFont());
 
         const QFontMetrics metrics = m_qtPainter->fontMetrics();
-        const QRect boundingRect = metrics.boundingRect(QString(str));
+        const QRect boundingRect = metrics.boundingRect(QString::fromUtf8(str.ToUTF8().data()));
 
         if ( width )
             *width = boundingRect.width();
@@ -1006,7 +1006,7 @@ public:
         {
             const wxString subString = text.substr(0, i+1);
             const QRect
-                boundingRect = metrics.boundingRect(QString(subString));
+                boundingRect = metrics.boundingRect(QString::fromUtf8(subString.ToUTF8().data()));
             widths[i] = boundingRect.width();
         }
     }
@@ -1030,7 +1030,7 @@ protected:
         while ( tokenizer.HasMoreTokens() )
         {
             const wxString line = tokenizer.GetNextToken();
-            m_qtPainter->drawText(x, y + metrics.ascent(), QString(line));
+            m_qtPainter->drawText(x, y + metrics.ascent(), QString::fromUtf8(line.ToUTF8().data()));
             y += metrics.lineSpacing();
         }
     }
