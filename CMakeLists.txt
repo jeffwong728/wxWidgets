@@ -9,6 +9,12 @@
 
 cmake_minimum_required(VERSION 3.12.1)
 
+if (WIN32)
+  # Set utf-8 charset to avoid compile error C2001
+  add_compile_options("/utf-8")
+  add_compile_options("/bigobj")
+endif()
+
 if(NOT CMAKE_CONFIGURATION_TYPES)
     get_property(HAVE_MULTI_CONFIG_GENERATOR GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
     # Set default configuration types for multi-config generators
