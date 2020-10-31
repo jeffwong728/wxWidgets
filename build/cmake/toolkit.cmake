@@ -75,7 +75,7 @@ if(UNIX AND NOT APPLE AND NOT WIN32)
     list(APPEND wxTOOLKIT_LIBRARIES ${X11_LIBRARIES})
 endif()
 
-if(WXGTK AND NOT WIN32 AND NOT MSVC)
+if(WXGTK AND NOT MSVC)
     if(WXGTK4)
         set(gtk_lib GTK4)
     elseif(WXGTK3)

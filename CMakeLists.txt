@@ -9,7 +9,7 @@
 
 cmake_minimum_required(VERSION 3.12.1)
 
-if (WIN32)
+if (WIN32 AND MSVC)
   # Set utf-8 charset to avoid compile error C2001
   add_compile_options("/utf-8")
   add_compile_options("/bigobj")
