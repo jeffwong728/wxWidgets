@@ -195,6 +195,11 @@ public:
 
     int GTKGetUniformRowHeight() const { return m_uniformRowHeight; }
 
+    int GetHighlightLine() const { return m_highlightRow; }
+    void SetHighlightLine(const int hlRow) { m_highlightRow = hlRow; }
+    wxDataViewItem FindItemByRow(unsigned int row) const { return GetTopItem(); }
+    int FindRowByItem(const wxDataViewItem &item) const { return -1; }
+
     // Simple RAII helper for disabling selection events during its lifetime.
     class SelectionEventsSuppressor
     {
@@ -242,6 +247,7 @@ private:
     // GetRect() methods of the renderers but this can be set to a positive
     // value to force the height of all rows to the given value.
     int m_uniformRowHeight;
+    int m_highlightRow{-1};
 
     virtual void AddChildGTK(wxWindowGTK* child) wxOVERRIDE;
     void GtkEnableSelectionEvents();
