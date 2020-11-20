@@ -8,7 +8,7 @@
       "name": "(Windows) Launch",
       "type": "cppvsdbg",
       "request": "launch",
-      "program": "${env:SPAM_ROOT_DIR}/build/wxWidgets/${command:cmake.buildType}/wxlib/vc_x64_dll/widgets.exe",
+      "program": "${env:SPAM_ROOT_DIR}/build/wxWidgets/${command:cmake.buildType}/wxlib/vc_x64_dll/dataview.exe",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",

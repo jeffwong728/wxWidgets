@@ -27,7 +27,8 @@
       "wxBUILD_SAMPLES" : "SOME",
       "HAVE_STD_UNORDERED_MAP" : true,
       "HAVE_STD_UNORDERED_SET" : true,
-      "wxUSE_MEMORY_TRACING" : true
+      "wxUSE_MEMORY_TRACING" : true,
+      "wxUSE_NATIVE_DATAVIEWCTRL" : false
     },
     "cmake.preferredGenerators": ["Ninja"],
     "cmake.platform": "x64",
